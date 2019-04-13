@@ -1,10 +1,10 @@
-Applications of Principal Component Analysis to engineering problems
+# Applications of Principal Component Analysis to engineering problems
 
 # Rationale
-	在上課中學習到PCA，覺得這個工具十分好用，能夠將多維度空間進行特徵壓縮，取出變化率最高的特徵向量，進而比較出資料中分群的結果，這項工具可以算是機器學習的基礎，我個人也對於機器學習很有興趣，所以當老師在介紹時，就想選擇PCA作為報告，能更加瞭解PCA也能學習一些機器學習實作面的技術。
+課程中學習到PCA，覺得這個工具十分好用，能夠將多維度空間進行特徵壓縮，取出變化率最高的特徵向量，進而比較出資料中分群的結果，這項工具可以算是機器學習的基礎，我個人也對於機器學習很有興趣，所以當老師在介紹時，就想選擇PCA作為報告，能更加瞭解PCA也能學習一些機器學習實作面的技術。
 
 # Problem background including the problem difficulties
-	如果拿到一大筆資料，需要進行分類，然而這類資料有許多特徵，若想直接進行分析，分出個別的類型很容易浪費時間、甚至找不出任何的結果，若想進行高維度資料的分群，必先進行降維，稍微介紹資料分析中五種降維方法:
+如果拿到一大筆資料，需要進行分類，然而這類資料有許多特徵，若想直接進行分析，分出個別的類型很容易浪費時間、甚至找不出任何的結果，若想進行高維度資料的分群，必先進行降維，稍微介紹資料分析中五種降維方法:
 
 (a)	Missing Values Ratio
 包含太多缺失值的資料列包含有用信息的可能性較少，將資料列缺失值大於某個閾值的列去掉。
@@ -20,13 +20,13 @@ Applications of Principal Component Analysis to engineering problems
 (e) Random Forests
 	對目標屬性產生許多巨大的樹，然後根據對每個屬性的統計結果找到信息量最大的特徵子集。
 
-評論pca:
+**評論pca**:
 優: 利用降維技術將少數綜合變量來代替原始多個變量，這些綜合變量卻能集中原始變量的大部分信息，能對客觀的現象進行科學分數的評價、分類。
 
 缺: 進行 PCA 變換後會喪失資料的解釋性，函數意義不明確。
 
 # Solutions with linear algebra techniques
-	當必須分析依樣具有多項特徵的物件時，不太可能直接利用原始數據處理，若是2維或3維還能利用畫圖來表示，查看彼此關聯，但是上百維度的資料，基本上直接分析會有很大的難度，所以就需要現代學習到的pca分析，將大量特徵資料壓縮成三維、二維，能夠圖形化，就比較好進行資料分群。
+當必須分析依樣具有多項特徵的物件時，不太可能直接利用原始數據處理，若是2維或3維還能利用畫圖來表示，查看彼此關聯，但是上百維度的資料，基本上直接分析會有很大的難度，所以就需要現代學習到的pca分析，將大量特徵資料壓縮成三維、二維，能夠圖形化，就比較好進行資料分群。
 
 # Examples/applications
 (a)簡介:
@@ -35,7 +35,7 @@ Applications of Principal Component Analysis to engineering problems
 
 (b)大致架構介紹:
 Autoencoder(一種神經網路)的架構如下圖:
- 
+![png](./autoencoder.png)
 
 Autoencoder架構:
 大致架構為從input壓縮(encoder)feature 再解壓(decoder)成ouput(原始大小) ，通過對比原始input跟解壓後ouput、減少誤差，進行反向傳遞來回訓練，訓練出中間code的準確性(能擷取數據中最具代表性的信息)，就能得到input中最重要的特徵。
@@ -48,11 +48,11 @@ Mnist是一連串手寫數字的資料圖片，被包含在tensorflow dataset裡
 2. 10,000 筆的 test data (mnist.test)
 3. 5,000 筆的 validation data (mnist.validation)
 如下圖所示(testdata中取出前10張圖):
- 
-	每張圖片皆為28*28pixel
+![png](./mnist.png) 
+	
 
 (d)資料處理流程:
-
+![jpg](./workflow.JPG)
 
 Load data:
 把data從package取出，並存取到變數中。
