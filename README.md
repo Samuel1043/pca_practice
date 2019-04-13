@@ -109,7 +109,7 @@ V. Discussions
 	這次報告對於原本的pca更加了解，從上課時比較虛幻的variance、covariance、correlation公式，並取得eigenvalue、eigenvector，會計算但是對於pca還不了解，在做報告時上網學習了更多資訊，並將pca真實應用在機器學習上，才真正理解到pca這項工具強大。
 	在機器學習領域，不只有autoencoder能用到pca，很多機器學習的方法都需要降維，而降維就能利用到pca，所以pca真的是很有用的工具。
 
-Code連結: https://github.com/Samuel1043/pca_practice/tree/master
+
 
 VI. References.
 https://github.com/tensorflow/tensorflow/blob/7c36309c37b04843030664cdc64aca2bb7d6ecaa/tensorflow/contrib/learn/python/learn/datasets/mnist.py#L160
